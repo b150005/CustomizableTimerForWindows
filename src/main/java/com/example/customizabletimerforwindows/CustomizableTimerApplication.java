@@ -6,6 +6,7 @@ import javafx.scene.Scene;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import java.net.URL;
 
 public class CustomizableTimerApplication extends Application {
 
@@ -15,8 +16,9 @@ public class CustomizableTimerApplication extends Application {
 
   @Override
   public void start(Stage stage) {
-    FXMLLoader fxmlLoader = new FXMLLoader(CustomizableTimerApplication.class.getResource("settings-view.fxml"));
     try {
+      URL url = CustomizableTimerApplication.class.getResource("settings-view.fxml");
+      FXMLLoader fxmlLoader = new FXMLLoader(url);
       Scene scene = new Scene(fxmlLoader.load());
       stage.setScene(scene);
     } catch (IOException e) {
