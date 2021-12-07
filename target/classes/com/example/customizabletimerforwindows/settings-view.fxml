@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.geometry.Insets?>
-<?import javafx.geometry.Rectangle2D?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.CheckBox?>
 <?import javafx.scene.control.ChoiceBox?>
@@ -19,7 +18,7 @@
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.layout.StackPane?>
 
-<TabPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="550.0" prefWidth="600.0" tabClosingPolicy="UNAVAILABLE" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1">
+<TabPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="550.0" prefWidth="600.0" tabClosingPolicy="UNAVAILABLE" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.customizabletimerforwindows.SettingsController">
   <tabs>
     <Tab text="General">
          <content>
@@ -50,34 +49,34 @@
                   <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
               </rowConstraints>
                <children>
-                  <CheckBox mnemonicParsing="false" text="デジタルモードで表示" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER" />
-                  <CheckBox mnemonicParsing="false" text="アニメーションの前面表示" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER" />
+                  <CheckBox fx:id="digitalModeCheckButton" mnemonicParsing="false" onAction="#onCheckBoxClick" text="デジタルモードで表示" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER" />
+                  <CheckBox fx:id="displayAnimationInFrontCheckBox" mnemonicParsing="false" onAction="#onCheckBoxClick" text="アニメーションの前面表示" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER" />
                   <Separator GridPane.columnIndex="1" GridPane.columnSpan="3" GridPane.halignment="CENTER" GridPane.rowIndex="3" GridPane.valignment="CENTER" />
-                  <CheckBox mnemonicParsing="false" text="アニメーション(前面)" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="4" GridPane.valignment="CENTER" />
-                  <Label maxWidth="1.7976931348623157E308" text="FilePath" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.rowIndex="5" GridPane.valignment="CENTER">
+                  <CheckBox fx:id="frontAnimationCheckBox" mnemonicParsing="false" onAction="#onCheckBoxClick" text="アニメーション(前面)" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="4" GridPane.valignment="CENTER" />
+                  <Label fx:id="frontAnimationFilePathLabel" maxWidth="1.7976931348623157E308" text="FilePath" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.rowIndex="5" GridPane.valignment="CENTER">
                      <GridPane.margin>
                         <Insets left="10.0" right="10.0" />
                      </GridPane.margin>
                   </Label>
-                  <Button mnemonicParsing="false" text="選択" GridPane.columnIndex="3" GridPane.halignment="LEFT" GridPane.rowIndex="5" GridPane.valignment="CENTER">
+                  <Button fx:id="showFrontFileChooserButton" mnemonicParsing="false" text="選択" GridPane.columnIndex="3" GridPane.halignment="LEFT" GridPane.rowIndex="5" GridPane.valignment="CENTER">
                      <GridPane.margin>
                         <Insets left="10.0" />
                      </GridPane.margin>
                   </Button>
                   <Separator GridPane.columnIndex="1" GridPane.columnSpan="3" GridPane.halignment="CENTER" GridPane.rowIndex="6" GridPane.valignment="CENTER" />
-                  <CheckBox mnemonicParsing="false" text="アニメーション(背面)" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="7" GridPane.valignment="CENTER" />
-                  <Label maxWidth="1.7976931348623157E308" text="FilePath" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.rowIndex="8" GridPane.valignment="CENTER">
+                  <CheckBox fx:id="backAnimationCheckBox" mnemonicParsing="false" onAction="#onCheckBoxClick" text="アニメーション(背面)" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="7" GridPane.valignment="CENTER" />
+                  <Label fx:id="backAnimationFilePathLabel" maxWidth="1.7976931348623157E308" text="FilePath" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.rowIndex="8" GridPane.valignment="CENTER">
                      <GridPane.margin>
                         <Insets left="10.0" right="10.0" />
                      </GridPane.margin>
                   </Label>
-                  <Button mnemonicParsing="false" text="選択" GridPane.columnIndex="3" GridPane.halignment="LEFT" GridPane.rowIndex="8" GridPane.valignment="CENTER">
+                  <Button fx:id="showBackFileChooserButton" mnemonicParsing="false" text="選択" GridPane.columnIndex="3" GridPane.halignment="LEFT" GridPane.rowIndex="8" GridPane.valignment="CENTER">
                      <GridPane.margin>
                         <Insets left="10.0" />
                      </GridPane.margin>
                   </Button>
                   <Separator GridPane.columnIndex="1" GridPane.columnSpan="3" GridPane.halignment="CENTER" GridPane.rowIndex="9" GridPane.valignment="CENTER" />
-                  <DatePicker maxWidth="1.7976931348623157E308" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="10" GridPane.valignment="CENTER">
+                  <DatePicker fx:id="displayDatePicker1" maxWidth="1.7976931348623157E308" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="10" GridPane.valignment="CENTER">
                      <GridPane.margin>
                         <Insets bottom="1.0" left="10.0" right="10.0" top="1.0" />
                      </GridPane.margin>
@@ -90,22 +89,22 @@
                      <GridPane.margin>
                         <Insets right="10.0" />
                      </GridPane.margin></Label>
-                  <DatePicker maxWidth="1.7976931348623157E308" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="11" GridPane.valignment="CENTER">
+                  <DatePicker fx:id="displayDatePicker2" maxWidth="1.7976931348623157E308" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="11" GridPane.valignment="CENTER">
                      <GridPane.margin>
                         <Insets bottom="1.0" left="10.0" right="10.0" top="1.0" />
                      </GridPane.margin>
                   </DatePicker>
-                  <DatePicker maxWidth="1.7976931348623157E308" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="12" GridPane.valignment="CENTER">
+                  <DatePicker fx:id="displayDatePicker3" maxWidth="1.7976931348623157E308" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="12" GridPane.valignment="CENTER">
                      <GridPane.margin>
                         <Insets bottom="1.0" left="10.0" right="10.0" top="1.0" />
                      </GridPane.margin>
                   </DatePicker>
-                  <DatePicker maxWidth="1.7976931348623157E308" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="13" GridPane.valignment="CENTER">
+                  <DatePicker fx:id="displayDatePicker4" maxWidth="1.7976931348623157E308" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="13" GridPane.valignment="CENTER">
                      <GridPane.margin>
                         <Insets bottom="1.0" left="10.0" right="10.0" top="1.0" />
                      </GridPane.margin>
                   </DatePicker>
-                  <DatePicker maxWidth="1.7976931348623157E308" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="14" GridPane.valignment="CENTER">
+                  <DatePicker fx:id="displayDatePicker5" maxWidth="1.7976931348623157E308" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="14" GridPane.valignment="CENTER">
                      <GridPane.margin>
                         <Insets bottom="1.0" left="10.0" right="10.0" top="1.0" />
                      </GridPane.margin>
@@ -122,37 +121,37 @@
                      <GridPane.margin>
                         <Insets right="10.0" />
                      </GridPane.margin></Label>
-                  <ChoiceBox GridPane.columnIndex="1" GridPane.halignment="RIGHT" GridPane.rowIndex="5" GridPane.valignment="CENTER">
+                  <ChoiceBox fx:id="frontAnimationDisplayModeChoiceBox" onInputMethodTextChanged="#onDisplayModeChanged" GridPane.columnIndex="1" GridPane.halignment="RIGHT" GridPane.rowIndex="5" GridPane.valignment="CENTER">
                      <GridPane.margin>
                         <Insets bottom="1.0" right="10.0" top="1.0" />
                      </GridPane.margin>
                   </ChoiceBox>
-                  <ChoiceBox GridPane.columnIndex="1" GridPane.halignment="RIGHT" GridPane.rowIndex="8" GridPane.valignment="CENTER">
+                  <ChoiceBox fx:id="backAnimationDisplayModeChoiceBox" onInputMethodTextChanged="#onDisplayModeChanged" GridPane.columnIndex="1" GridPane.halignment="RIGHT" GridPane.rowIndex="8" GridPane.valignment="CENTER">
                      <GridPane.margin>
                         <Insets bottom="1.0" right="10.0" top="1.0" />
                      </GridPane.margin>
                   </ChoiceBox>
-                  <ChoiceBox GridPane.columnIndex="3" GridPane.halignment="LEFT" GridPane.rowIndex="10" GridPane.valignment="CENTER">
+                  <ChoiceBox fx:id="displayTimeChoiceBox1" GridPane.columnIndex="3" GridPane.halignment="LEFT" GridPane.rowIndex="10" GridPane.valignment="CENTER">
                      <GridPane.margin>
                         <Insets bottom="1.0" left="10.0" top="1.0" />
                      </GridPane.margin>
                   </ChoiceBox>
-                  <ChoiceBox GridPane.columnIndex="3" GridPane.halignment="LEFT" GridPane.rowIndex="11" GridPane.valignment="CENTER">
+                  <ChoiceBox fx:id="displayTimeChoiceBox2" GridPane.columnIndex="3" GridPane.halignment="LEFT" GridPane.rowIndex="11" GridPane.valignment="CENTER">
                      <GridPane.margin>
                         <Insets bottom="1.0" left="10.0" top="1.0" />
                      </GridPane.margin>
                   </ChoiceBox>
-                  <ChoiceBox GridPane.columnIndex="3" GridPane.halignment="LEFT" GridPane.rowIndex="12" GridPane.valignment="CENTER">
+                  <ChoiceBox fx:id="displayTimeChoiceBox3" GridPane.columnIndex="3" GridPane.halignment="LEFT" GridPane.rowIndex="12" GridPane.valignment="CENTER">
                      <GridPane.margin>
                         <Insets bottom="1.0" left="10.0" top="1.0" />
                      </GridPane.margin>
                   </ChoiceBox>
-                  <ChoiceBox GridPane.columnIndex="3" GridPane.halignment="LEFT" GridPane.rowIndex="13" GridPane.valignment="CENTER">
+                  <ChoiceBox fx:id="displayTimeChoiceBox4" GridPane.columnIndex="3" GridPane.halignment="LEFT" GridPane.rowIndex="13" GridPane.valignment="CENTER">
                      <GridPane.margin>
                         <Insets bottom="1.0" left="10.0" top="1.0" />
                      </GridPane.margin>
                   </ChoiceBox>
-                  <ChoiceBox GridPane.columnIndex="3" GridPane.halignment="LEFT" GridPane.rowIndex="14" GridPane.valignment="CENTER">
+                  <ChoiceBox fx:id="displayTimeChoiceBox5" GridPane.columnIndex="3" GridPane.halignment="LEFT" GridPane.rowIndex="14" GridPane.valignment="CENTER">
                      <GridPane.margin>
                         <Insets bottom="1.0" left="10.0" top="1.0" />
                      </GridPane.margin>
@@ -201,46 +200,46 @@
                      </GridPane.margin></Label>
                   <Separator maxWidth="1.7976931348623157E308" GridPane.columnIndex="1" GridPane.columnSpan="3" GridPane.halignment="CENTER" GridPane.rowIndex="5" GridPane.valignment="CENTER" />
                   <Label text="プレビュー" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="6" GridPane.valignment="CENTER" />
-                  <Label maxWidth="1.7976931348623157E308" text="FilePath" GridPane.columnIndex="2" GridPane.rowIndex="1">
+                  <Label fx:id="faceFilePathLabel" maxWidth="1.7976931348623157E308" text="FilePath" GridPane.columnIndex="2" GridPane.rowIndex="1">
                      <GridPane.margin>
                         <Insets left="10.0" right="10.0" />
                      </GridPane.margin></Label>
-                  <Label maxWidth="1.7976931348623157E308" text="FilePath" GridPane.columnIndex="2" GridPane.rowIndex="2">
+                  <Label fx:id="hourFilePathLabel" maxWidth="1.7976931348623157E308" text="FilePath" GridPane.columnIndex="2" GridPane.rowIndex="2">
                      <GridPane.margin>
                         <Insets left="10.0" right="10.0" />
                      </GridPane.margin></Label>
-                  <Label maxWidth="1.7976931348623157E308" text="FilePath" GridPane.columnIndex="2" GridPane.rowIndex="3">
+                  <Label fx:id="minuteFilePathLabel" maxWidth="1.7976931348623157E308" text="FilePath" GridPane.columnIndex="2" GridPane.rowIndex="3">
                      <GridPane.margin>
                         <Insets left="10.0" right="10.0" />
                      </GridPane.margin></Label>
-                  <Label maxWidth="1.7976931348623157E308" text="FilePath" GridPane.columnIndex="2" GridPane.rowIndex="4">
+                  <Label fx:id="secondFilePathLabel" maxWidth="1.7976931348623157E308" text="FilePath" GridPane.columnIndex="2" GridPane.rowIndex="4">
                      <GridPane.margin>
                         <Insets left="10.0" right="10.0" />
                      </GridPane.margin></Label>
-                  <Button mnemonicParsing="false" text="選択" GridPane.columnIndex="3" GridPane.rowIndex="1">
+                  <Button fx:id="showFaceFileChooserButton" mnemonicParsing="false" text="選択" GridPane.columnIndex="3" GridPane.rowIndex="1">
                      <GridPane.margin>
                         <Insets bottom="1.0" left="10.0" top="1.0" />
                      </GridPane.margin></Button>
-                  <Button mnemonicParsing="false" text="選択" GridPane.columnIndex="3" GridPane.rowIndex="2">
+                  <Button fx:id="showHourFileChooserButton" mnemonicParsing="false" text="選択" GridPane.columnIndex="3" GridPane.rowIndex="2">
                      <GridPane.margin>
                         <Insets bottom="1.0" left="10.0" top="1.0" />
                      </GridPane.margin></Button>
-                  <Button mnemonicParsing="false" text="選択" GridPane.columnIndex="3" GridPane.rowIndex="3">
+                  <Button fx:id="showMinuteFileChooserButton" mnemonicParsing="false" text="選択" GridPane.columnIndex="3" GridPane.rowIndex="3">
                      <GridPane.margin>
                         <Insets bottom="1.0" left="10.0" top="1.0" />
                      </GridPane.margin></Button>
-                  <Button mnemonicParsing="false" text="選択" GridPane.columnIndex="3" GridPane.rowIndex="4">
+                  <Button fx:id="showSecondFileChooserButton" mnemonicParsing="false" text="選択" GridPane.columnIndex="3" GridPane.rowIndex="4">
                      <GridPane.margin>
                         <Insets bottom="1.0" left="10.0" top="1.0" />
                      </GridPane.margin></Button>
                   <StackPane GridPane.columnIndex="2" GridPane.rowIndex="7">
                      <children>
-                        <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" StackPane.alignment="CENTER" />
-                        <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" StackPane.alignment="CENTER" />
-                        <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" StackPane.alignment="CENTER" />
-                        <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" StackPane.alignment="CENTER" />
-                        <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" StackPane.alignment="CENTER" />
-                        <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" StackPane.alignment="CENTER" />
+                        <ImageView fx:id="faceImageView" fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" StackPane.alignment="CENTER" />
+                        <ImageView fx:id="hourImageView" fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" StackPane.alignment="CENTER" />
+                        <ImageView fx:id="minuteImageView" fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" StackPane.alignment="CENTER" />
+                        <ImageView fx:id="secondImageView" fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" StackPane.alignment="CENTER" />
+                        <ImageView fx:id="frontAnalogAnimationImageView" fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" StackPane.alignment="CENTER" />
+                        <ImageView fx:id="backAnalogAnimationImageView" fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" StackPane.alignment="CENTER" />
                      </children>
                   </StackPane>
                </children>
@@ -275,19 +274,19 @@
                   <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
               </rowConstraints>
                <children>
-                  <CheckBox mnemonicParsing="false" text="タイマー機能" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER" />
+                  <CheckBox fx:id="timerModeCheckBox" mnemonicParsing="false" onAction="#onCheckBoxClick" text="タイマー機能" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER" />
                   <Label text="フォント" GridPane.columnIndex="1" GridPane.halignment="RIGHT" GridPane.rowIndex="3" GridPane.valignment="CENTER">
                      <GridPane.margin>
                         <Insets right="10.0" />
                      </GridPane.margin>
                   </Label>
                   <Separator maxWidth="1.7976931348623157E308" GridPane.columnIndex="1" GridPane.columnSpan="3" GridPane.rowIndex="2" />
-                  <ChoiceBox maxWidth="1.7976931348623157E308" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="3" GridPane.valignment="CENTER">
+                  <ChoiceBox fx:id="fontChoiceBox" maxWidth="1.7976931348623157E308" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="3" GridPane.valignment="CENTER">
                      <GridPane.margin>
                         <Insets bottom="1.0" left="10.0" right="10.0" top="1.0" />
                      </GridPane.margin>
                   </ChoiceBox>
-                  <Button mnemonicParsing="false" text="Button" GridPane.columnIndex="3" GridPane.halignment="LEFT" GridPane.rowIndex="3" GridPane.valignment="CENTER">
+                  <Button fx:id="showFontFileChooserButton" mnemonicParsing="false" text="選択" GridPane.columnIndex="3" GridPane.halignment="LEFT" GridPane.rowIndex="3" GridPane.valignment="CENTER">
                      <GridPane.margin>
                         <Insets bottom="1.0" left="10.0" top="1.0" />
                      </GridPane.margin>
@@ -318,51 +317,44 @@
                         <Insets right="10.0" />
                      </GridPane.margin>
                   </Label>
-                  <DatePicker maxWidth="1.7976931348623157E308" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="9" GridPane.valignment="CENTER">
+                  <DatePicker fx:id="timerDatePicker" maxWidth="1.7976931348623157E308" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="9" GridPane.valignment="CENTER">
                      <GridPane.margin>
                         <Insets bottom="1.0" left="10.0" right="10.0" top="1.0" />
                      </GridPane.margin>
                   </DatePicker>
-                  <CheckBox mnemonicParsing="false" text="期限超過後に時計モードに移行" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="10" GridPane.valignment="CENTER" />
+                  <CheckBox fx:id="shiftToClockCheckBox" mnemonicParsing="false" onAction="#onCheckBoxClick" text="期限超過後に時計モードに移行" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="10" GridPane.valignment="CENTER" />
                   <Label text="プレビュー" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="12" GridPane.valignment="CENTER" />
                   <Separator maxWidth="1.7976931348623157E308" GridPane.columnIndex="1" GridPane.columnSpan="3" GridPane.halignment="CENTER" GridPane.rowIndex="11" GridPane.valignment="CENTER" />
-                  <ColorPicker GridPane.columnIndex="2" GridPane.rowIndex="4">
+                  <ColorPicker fx:id="baseFontColorPicker" GridPane.columnIndex="2" GridPane.rowIndex="4">
                      <GridPane.margin>
                         <Insets bottom="1.0" left="10.0" top="1.0" />
                      </GridPane.margin>
                   </ColorPicker>
-                  <ColorPicker GridPane.columnIndex="2" GridPane.rowIndex="5">
+                  <ColorPicker fx:id="beforeFontColorPicker" GridPane.columnIndex="2" GridPane.rowIndex="5">
                      <GridPane.margin>
                         <Insets bottom="1.0" left="10.0" top="1.0" />
                      </GridPane.margin>
                   </ColorPicker>
-                  <ColorPicker GridPane.columnIndex="2" GridPane.rowIndex="6">
+                  <ColorPicker fx:id="afterFontColorPicker" GridPane.columnIndex="2" GridPane.rowIndex="6">
                      <GridPane.margin>
                         <Insets bottom="1.0" left="10.0" top="1.0" />
                      </GridPane.margin>
                   </ColorPicker>
-                  <Slider maxWidth="1.7976931348623157E308" GridPane.columnIndex="2" GridPane.rowIndex="7">
+                  <Slider fx:id="opacitySlider" maxWidth="1.7976931348623157E308" GridPane.columnIndex="2" GridPane.rowIndex="7">
                      <GridPane.margin>
                         <Insets bottom="1.0" left="10.0" right="10.0" top="1.0" />
                      </GridPane.margin>
                   </Slider>
-                  <Spinner GridPane.columnIndex="3" GridPane.halignment="LEFT" GridPane.rowIndex="7" GridPane.valignment="CENTER">
+                  <Spinner fx:id="opacitySpinner" GridPane.columnIndex="3" GridPane.halignment="LEFT" GridPane.rowIndex="7" GridPane.valignment="CENTER">
                      <GridPane.margin>
                         <Insets bottom="1.0" left="10.0" top="1.0" />
                      </GridPane.margin>
                   </Spinner>
                   <StackPane GridPane.columnIndex="2" GridPane.rowIndex="13">
                      <children>
-                        <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" StackPane.alignment="CENTER" />
-                        <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" StackPane.alignment="CENTER">
-                           <viewport>
-                              <Rectangle2D />
-                           </viewport>
-                        </ImageView>
-                        <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" StackPane.alignment="CENTER" />
-                        <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" StackPane.alignment="CENTER" />
-                        <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" StackPane.alignment="CENTER" />
-                        <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" StackPane.alignment="CENTER" />
+                        <ImageView fx:id="digitalImageView" fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" StackPane.alignment="CENTER" />
+                        <ImageView fx:id="frontDigitalAnimationImageView" fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" StackPane.alignment="CENTER" />
+                        <ImageView fx:id="backDigitalAnimationImageView" fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" StackPane.alignment="CENTER" />
                      </children>
                   </StackPane>
                </children>
