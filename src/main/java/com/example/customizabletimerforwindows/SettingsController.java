@@ -18,28 +18,44 @@ public class SettingsController implements Initializable {
   @FXML private CheckBox digitalModeCheckButton;
   @FXML private CheckBox displayAnimationInFrontCheckBox;
   @FXML private CheckBox frontAnimationCheckBox;
-  @FXML private CheckBox backAnimationCheckBox;
   @FXML private ChoiceBox<String> frontAnimationDisplayModeChoiceBox;
+  @FXML private Label frontAnimationFilePathLabel;
+  @FXML private Button showFrontFileChooserButton;
+  @FXML private CheckBox backAnimationCheckBox;
   @FXML private ChoiceBox<String> backAnimationDisplayModeChoiceBox;
-  @FXML private ChoiceBox<String> displayTimeChoiceBox1;
-  @FXML private ChoiceBox<String> displayTimeChoiceBox2;
-  @FXML private ChoiceBox<String> displayTimeChoiceBox3;
-  @FXML private ChoiceBox<String> displayTimeChoiceBox4;
-  @FXML private ChoiceBox<String> displayTimeChoiceBox5;
+  @FXML private Label backAnimationFilePathLabel;
+  @FXML private Button showBackFileChooserButton;
   @FXML private DatePicker displayDatePicker1;
+  @FXML private ChoiceBox<String> displayTimeChoiceBox1;
   @FXML private DatePicker displayDatePicker2;
+  @FXML private ChoiceBox<String> displayTimeChoiceBox2;
   @FXML private DatePicker displayDatePicker3;
+  @FXML private ChoiceBox<String> displayTimeChoiceBox3;
   @FXML private DatePicker displayDatePicker4;
+  @FXML private ChoiceBox<String> displayTimeChoiceBox4;
   @FXML private DatePicker displayDatePicker5;
+  @FXML private ChoiceBox<String> displayTimeChoiceBox5;
+
+  // Analog
+  @FXML private Label faceFilePathLabel;
+  @FXML private Button showFaceFileChooserButton;
+  @FXML private Label hourFilePathLabel;
+  @FXML private Button showHourFileChooserButton;
+  @FXML private Label minuteFilePathLabel;
+  @FXML private Button showMinuteFileChooserButton;
+  @FXML private Label secondFilePathLabel;
+  @FXML private Button showSecondFileChooserButton;
 
   // Digital
   @FXML private CheckBox timerModeCheckBox;
-  @FXML private CheckBox shiftToClockCheckBox;
+  @FXML private ChoiceBox fontChoiceBox;
+  @FXML private Button showFontFileChooserButton;
   @FXML private ColorPicker baseFontColorPicker;
   @FXML private ColorPicker beforeFontColorPicker;
   @FXML private ColorPicker afterFontColorPicker;
   @FXML private Slider opacitySlider;
-  @FXML private Spinner<Float> opacitySpinner;
+  @FXML private Spinner<Double> opacitySpinner;
+  @FXML private CheckBox shiftToClockCheckBox;
 
   @Override
   public void initialize(URL url, ResourceBundle resourceBundle) {
@@ -54,7 +70,7 @@ public class SettingsController implements Initializable {
 
     });
     this.opacitySpinner.valueProperty().addListener((observable, oldValue, newValue) -> {
-      System.out.println("hello");
+
     });
   }
 
