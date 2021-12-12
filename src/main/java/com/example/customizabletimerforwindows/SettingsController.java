@@ -149,9 +149,17 @@ public class SettingsController implements Initializable {
    */
   @FXML private ColorPicker beforeFontColorPicker;
   /**
+   * タイマー直前の時刻を操作するSpinner
+   */
+  @FXML private Spinner<Integer> beforeTimeSpinner;
+  /**
    * フォント色(直後)を選択するColorPicker
    */
   @FXML private ColorPicker afterFontColorPicker;
+  /**
+   * タイマー直後の時刻を操作するSpinner
+   */
+  @FXML private Spinner<Integer> afterTimeSpinner;
   /**
    * フォントの透明度を操作するSlider
    */
@@ -201,6 +209,10 @@ public class SettingsController implements Initializable {
     });
   }
 
+  /**
+   * チェックボックス押下時のコールバック処理
+   * @param event
+   */
   @FXML
   protected void onCheckBoxClick(ActionEvent event) {
     switch (((CheckBox)event.getSource()).getId()) {

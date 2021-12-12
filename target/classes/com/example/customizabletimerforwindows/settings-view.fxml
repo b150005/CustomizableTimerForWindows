@@ -11,6 +11,7 @@
 <?import javafx.scene.control.Slider?>
 <?import javafx.scene.control.Spinner?>
 <?import javafx.scene.control.SpinnerValueFactory.DoubleSpinnerValueFactory?>
+<?import javafx.scene.control.SpinnerValueFactory.IntegerSpinnerValueFactory?>
 <?import javafx.scene.control.Tab?>
 <?import javafx.scene.control.TabPane?>
 <?import javafx.scene.image.ImageView?>
@@ -361,6 +362,22 @@
                         <ImageView fx:id="backDigitalAnimationImageView" fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" StackPane.alignment="CENTER" />
                      </children>
                   </StackPane>
+                  <Spinner fx:id="beforeTimeSpinner" editable="true" GridPane.columnIndex="3" GridPane.halignment="LEFT" GridPane.rowIndex="5" GridPane.valignment="CENTER">
+                     <GridPane.margin>
+                        <Insets bottom="1.0" left="10.0" top="1.0" />
+                     </GridPane.margin>
+                     <valueFactory>
+                        <SpinnerValueFactory.IntegerSpinnerValueFactory amountToStepBy="1" initialValue="5" max="120" min="0"/>
+                     </valueFactory>
+                  </Spinner>
+                  <Spinner fx:id="afterTimerSpinner" editable="true" GridPane.columnIndex="3" GridPane.halignment="LEFT" GridPane.rowIndex="6" GridPane.valignment="CENTER">
+                     <GridPane.margin>
+                        <Insets bottom="1.0" left="10.0" top="1.0" />
+                     </GridPane.margin>
+                     <valueFactory>
+                        <SpinnerValueFactory.IntegerSpinnerValueFactory amountToStepBy="1" initialValue="5" max="120" min="0"/>
+                     </valueFactory>
+                  </Spinner>
                </children>
             </GridPane>
          </content>
