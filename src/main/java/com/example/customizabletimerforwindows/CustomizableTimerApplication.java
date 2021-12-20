@@ -5,12 +5,13 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 
-import java.io.IOException;
+import java.io.*;
+
 import java.net.URL;
 
 public class CustomizableTimerApplication extends Application {
-
   public static void main(String[] args) {
+    // アプリケーションの起動
     launch(args);
   }
 
