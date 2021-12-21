@@ -1,20 +1,25 @@
 package com.example.customizabletimerforwindows;
 
+import java.io.IOException;
+import java.net.URL;
+
+import io.lettuce.core.RedisClient;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 
-import java.io.*;
-
-import java.net.URL;
-
 public class CustomizableTimerApplication extends Application {
   public static void main(String[] args) {
+    // Redis Standaloneの起動
+    launchRedis();
     // アプリケーションの起動
     launch(args);
   }
 
+  /**
+   * JavaFXアプリケーション(設定画面)の起動
+   */
   @Override
   public void start(Stage stage) {
     try {
@@ -27,5 +32,9 @@ public class CustomizableTimerApplication extends Application {
     }
     stage.setTitle("Settings");
     stage.show();
+  }
+
+  private static void launchRedis() {
+    RedisClient client = RedisClient.create("redis://localhost");
   }
 }
